@@ -75,7 +75,6 @@ void MqttClientImpl::on_message(const mosquitto_message* src)
 	}
 	msg.MessageBuffer = Buffer;
 
-
 	Task->OnMessage(msg);
 }
 
