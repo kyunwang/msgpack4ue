@@ -13,6 +13,8 @@
 
 #include "MSGPackUtilitiesBPL.generated.h"
 
+using json = nlohmann::json;
+
 /**
  *
  */
