@@ -6,5 +6,7 @@ DerivedDataCache
 Intermediate
 Platforms
 Saved
+Plugins/MqttUtilities/Content
+Plugins/MqttUtilities/Intermediate
 Plugins/msgpack4ue/Content
 Plugins/msgpack4ue/Intermediate
