@@ -6,8 +6,10 @@ public class msgpack4ue : ModuleRules
 {
 	public msgpack4ue(ReadOnlyTargetRules Target) : base(Target)
 	{
-		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
-		
+		// PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
+		// Allows for try...catch blocks. Use sparsely, as it may impact preformance 
+		// bEnableExceptions = true;
+
 		PublicIncludePaths.AddRange(
 			new string[] {
 				// ... add public include paths required here ...
