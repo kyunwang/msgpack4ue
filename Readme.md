@@ -28,10 +28,12 @@ Currently tested and confirmed to be working on:
 - Mac OS Ventura (Apple Silicon)
 
 ## Setup
-- Download the plugin from [releases](https://github.com/kyunwang/msgpack4ue/releases)
-- Unzip and place into your project's Plugin directory
-- Enable the plugin in the Plugins window in the UE Editor
-- The plugin contains an example blueprint which can be used to test the plugin namely, `ACT_BasicDecode`
+1. Download the plugin from [releases](https://github.com/kyunwang/msgpack4ue/releases)
+1. Unzip and place into your project's Plugin directory
+1. Enable the plugin in the Plugins window in the UE Editor
+1. The plugin contains an example blueprint which can be used to test the plugin namely, `ACT_BasicDecode`
+1. You might have to recompile the plugins when adding a/the MQTT plugin. It may crash the editor otherwise. (Tools -> Debug -> Modules -> msgpack4ue (Recompile))
+   1. Or delete the Binaries of both plugins and then recompile by opening the project
 
 *P.S. Clone the repo for an example the plugin and MQTT. Code in BP ACT_MsgpackWithMQTT_Example*
 
