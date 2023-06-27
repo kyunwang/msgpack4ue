@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
 	"Version": 1,
-	"VersionName": "0.0.1",
+	"VersionName": "0.0.2",
 	"FriendlyName": "msgpack4ue",
 	"Description": "A simple plugin providing function(s) to decode msgpack data used along MQTT protocol.",
 	"Category": "Code Plugins",
