@@ -44,4 +44,15 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "MSGPack")
 	static bool GetPayloadMsgpackToArray(UPARAM(DisplayName = "MsgpackValue") const TArray<uint8> InMsgpackValue, FJsonObjectWrapper& OutJsonObject);
 
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "MSGPack")
+	static bool GetPayloadMsgpackFloat(UPARAM(DisplayName = "MsgpackValue") const TArray<uint8> InMsgpackValue, float& OutFloat);
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "MSGPack")
+	static bool GetPayloadMsgpackInt(UPARAM(DisplayName = "MsgpackValue") const TArray<uint8> InMsgpackValue, int32& OutInt);
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "MSGPack")
+	static bool GetPayloadMsgpackBool(UPARAM(DisplayName = "MsgpackValue") const TArray<uint8> InMsgpackValue, bool& OutBool);
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "MSGPack")
+	static bool GetPayloadMsgpackString(UPARAM(DisplayName = "MsgpackValue") const TArray<uint8> InMsgpackValue, FString& OutString);
 };
