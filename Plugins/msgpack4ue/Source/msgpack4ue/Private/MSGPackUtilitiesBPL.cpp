@@ -160,7 +160,6 @@ void UMSGPackUtilitiesBPL::ConvertBufferToString(TArray<uint8> InBuffer, FString
 	OutString = FString::FromHexBlob(InBuffer.GetData(), InBuffer.Num());
 }
 
-
 bool UMSGPackUtilitiesBPL::GetPayloadMsgpackToJsonString(TArray<uint8> InMsgpackValue, FString& OutString)
 {
 	json JsonData;
@@ -233,4 +232,76 @@ bool UMSGPackUtilitiesBPL::GetPayloadMsgpackToArray(TArray<uint8> InMsgpackValue
 	UE_LOG(LogTemp, Warning, TEXT("Failed to deserialize - %s"), *JsonString);
 
 	return false;
+}
+
+bool UMSGPackUtilitiesBPL::GetPayloadMsgpackFloat(TArray<uint8> InMsgpackValue, float& OutFloat)
+{
+	json JsonData;
+	std::vector<uint8> DataVector;
+	bool bIsSuccessful = ConvertMsgpackToJsonObject(InMsgpackValue, DataVector, JsonData);
+
+	bool bIsValidFloat = JsonData.is_number_float();
+
+	if (!bIsSuccessful || !bIsValidFloat) {
+		UE_LOG(LogTemp, Error, TEXT("Failed to convert to Float! or received null"));
+		return false;
+	}
+
+	OutFloat = JsonData.get<float>();
+
+	return true;
+}
+
+bool UMSGPackUtilitiesBPL::GetPayloadMsgpackInt(TArray<uint8>  InMsgpackValue, int32& OutInt)
+{
+	json JsonData;
+	std::vector<uint8> DataVector;
+	bool bIsSuccessful = ConvertMsgpackToJsonObject(InMsgpackValue, DataVector, JsonData);
+
+	bool bIsValidInt = JsonData.is_number_integer();
+
+	if (!bIsSuccessful || !bIsValidInt) {
+		UE_LOG(LogTemp, Error, TEXT("Failed to convert to Int! or received null"));
+		return false;
+	}
+
+	OutInt = JsonData.get<int32>();
+
+	return true;
+}
+
+bool UMSGPackUtilitiesBPL::GetPayloadMsgpackBool(TArray<uint8>  InMsgpackValue, bool& OutBool)
+{
+	json JsonData;
+	std::vector<uint8> DataVector;
+	bool bIsSuccessful = ConvertMsgpackToJsonObject(InMsgpackValue, DataVector, JsonData);
+
+	bool bIsValidBool = JsonData.is_boolean();
+
+	if (!bIsSuccessful || !bIsValidBool) {
+		UE_LOG(LogTemp, Error, TEXT("Failed to convert to Int! or received null"));
+		return false;
+	}
+
+	OutBool = JsonData.get<bool>();
+
+	return true;
+}
+
+bool UMSGPackUtilitiesBPL::GetPayloadMsgpackString(TArray<uint8> InMsgpackValue, FString& OutString)
+{
+	json JsonData;
+	std::vector<uint8> DataVector;
+	bool bIsSuccessful = ConvertMsgpackToJsonObject(InMsgpackValue, DataVector, JsonData);
+
+	bool bIsValidString = JsonData.is_string();
+
+	if (!bIsSuccessful || !bIsValidString) {
+		UE_LOG(LogTemp, Error, TEXT("Failed to convert to String! or received null"));
+		return false;
+	}
+
+	OutString = FString(JsonData.dump().c_str());
+
+	return true;
 }
