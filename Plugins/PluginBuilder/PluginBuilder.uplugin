@@ -1,0 +1,26 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.4",
+	"FriendlyName": "PluginBuilder",
+	"Description": "Adds a tools menu to build plugin with multiple engine versions and compress the built plugin into a zip file that can be submitted to the marketplace.",
+	"Category": "Programming",
+	"CreatedBy": "Naotsun",
+	"CreatedByURL": "https://twitter.com/Naotsun_UE",
+	"DocsURL": "https://github.com/Naotsun19B/PluginBuilder-Document",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/8480a6b969b047aca3ab8957509730dd",
+	"SupportURL": "https://github.com/Naotsun19B/PluginBuilder-Document",
+	"EngineVersion": "5.1.0",
+	"CanContainContent": false,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "PluginBuilder",
+			"Type": "EditorNoCommandlet",
+			"LoadingPhase": "PostEngineInit",
+			"PlatformAllowList": [
+				"Win64"
+			]
+		}
+	]
+}
